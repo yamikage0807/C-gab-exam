@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C-GAB 模擬試験 & 練習ツール</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Application Header -->
+    <header class="app-header">
+      <div class="logo">C-GAB <span>Practice</span></div>
+      <div id="theme-indicator" style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600;">OFFICIAL EXAM SIMULATOR</div>
+    </header>
+
+    <main style="flex: 1; display: flex; flex-direction: column;">
+      
+      <!-- SCREEN 1: Setup Screen -->
+      <section id="setup-screen" class="glass-card screen active">
+        <h1 class="setup-title">C-GAB 模擬試験システム</h1>
+        <p class="setup-desc">本番の試験に近いレイアウトと白基調のUIで、言語・非言語・英語の練習問題に取り組めます。</p>
+
+        <div class="setup-grid">
+          <!-- 1. Category Selection -->
+          <div class="setup-section">
+            <div class="section-label">
+              <span>📋</span> カテゴリ選択
+            </div>
+            <div class="category-grid">
+              <div class="category-chip active" data-category="verbal">
+                <div class="category-icon">✍️</div>
+                <div class="category-title">言語 (Verbal)</div>
+                <div class="category-meta">論理的読解 (全12問 / 3文章)</div>
+              </div>
+              <div class="category-chip" data-category="nonverbal">
+                <div class="category-icon">📊</div>
+                <div class="category-title">非言語 (Non-verbal)</div>
+                <div class="category-meta">図表の読み取り (全8問 / 2図表)</div>
+              </div>
+              <div class="category-chip" data-category="english">
+                <div class="category-icon">🇬🇧</div>
+                <div class="category-title">英語 (English)</div>
+                <div class="category-meta">長文読解 (全8問 / 2文章)</div>
+              </div>
+              <div class="category-chip" data-category="full">
+                <div class="category-icon">🔥</div>
+                <div class="category-title">通し試験 (Full Test)</div>
+                <div class="category-meta">全カテゴリ連続実施 (全28問)</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Question Count & Timer Slider Container -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <!-- Question Count Slider -->
+            <div class="setup-section">
+              <div class="slider-control">
+                <div class="slider-header">
+                  <span>出題問題数</span>
+                  <span id="q-count-val" class="slider-val">8問</span>
+                </div>
+                <input type="range" id="q-count-slider" class="slider-input" min="4" max="12" step="4" value="8">
+              </div>
+            </div>
+
+            <!-- Time Limit Slider -->
+            <div class="setup-section">
+              <div class="slider-control">
+                <div class="slider-header">
+                  <span>試験時間制限</span>
+                  <span id="time-limit-val" class="slider-val">5 分</span>
+                </div>
+                <input type="range" id="time-limit-slider" class="slider-input" min="1" max="30" value="5">
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. Timer Transition Preference Toggle -->
+          <div class="setup-section">
+            <div class="toggle-control">
+              <div>
+                <div class="section-label" style="font-size: 0.95rem;">⏱️ 時間切れ時の自動終了</div>
+                <div class="toggle-label-desc">制限時間が切れた際、自動的に回答を終了して結果画面へ遷移します。</div>
+              </div>
+              <label class="switch">
+                <input type="checkbox" id="auto-submit-toggle" checked>
+                <span class="slider-toggle"></span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Start Button -->
+          <button id="start-test-btn" class="btn btn-primary" style="padding: 14px; font-size: 1.05rem; margin-top: 5px;">
+            試験を開始する
+          </button>
+
+          <!-- History Logs Panel -->
+          <div class="glass-card history-card">
+            <div class="history-header">
+              <span>📈 過去の練習スコア</span>
+              <button id="clear-history-btn" class="btn" style="padding: 3px 8px; font-size: 0.75rem;">履歴クリア</button>
+            </div>
+            <div class="history-list" id="history-list-container">
+              <!-- Inserted via Javascript -->
+              <div style="color: var(--text-muted); text-align: center; padding: 20px; font-size: 0.8rem;">
+                履歴がありません。テストを完了するとここに記録されます。
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SCREEN 2: Test Screen -->
+      <section id="test-screen" class="screen">
+        <div class="test-topbar">
+          <div class="test-meta-info">
+            <span id="current-category-badge" class="current-category-badge">言語</span>
+            <span id="passage-progress" class="question-counter">文章 1 / 2</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 15px;">
+            <div class="timer-container">
+              <span class="timer-icon">⏱️</span>
+              <span id="timer-display" class="timer-text">05:00</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="test-layout-grid">
+          <!-- Left Panel: Passage / Tables -->
+          <div class="pane">
+            <div class="pane-card" id="left-pane-card">
+              <div class="pane-title">
+                <span id="passage-title-display">問題文・図表</span>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">スクロール可能</span>
+              </div>
+              <div id="passage-container" class="passage-content">
+                <!-- Inserted via Javascript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Panel: Multiple Questions under the Passage -->
+          <div class="pane">
+            <div class="pane-card" id="right-pane-card">
+              <div class="pane-title">設問一覧（この文章に対応する問題）</div>
+              <div id="questions-list" class="questions-list">
+                <!-- Inserted dynamically via Javascript -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Sidebar: Navigator & Keyboard Guides -->
+          <div class="test-sidebar">
+            <div class="pane-card" style="padding: 16px;">
+              <div class="pane-title" style="margin-bottom: 10px; padding-bottom: 6px;">問題一覧</div>
+              <div id="navigator-grid" class="navigator-grid">
+                <!-- Inserted 1..N buttons via Javascript -->
+              </div>
+
+              <div class="keyboard-guide">
+                <div class="keyboard-guide-title">キー操作</div>
+                <div class="shortcut-row">
+                  <span>選択肢選択</span>
+                  <span class="kbd">1</span>~<span class="kbd">5</span> / <span class="kbd">A</span>~<span class="kbd">E</span>
+                </div>
+                <div class="shortcut-row">
+                  <span>前 / 次の大問</span>
+                  <span class="kbd">←</span> / <span class="kbd">→</span>
+                </div>
+                <div class="shortcut-row">
+                  <span>設問フォーカス</span>
+                  <span class="kbd">Tab</span> / <span class="kbd">↑</span> / <span class="kbd">↓</span>
+                </div>
+                <div class="shortcut-row">
+                  <span>後で解く</span>
+                  <span class="kbd">F</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom bar actions -->
+        <div class="test-bottombar">
+          <div class="nav-arrows">
+            <button id="prev-passage-btn" class="btn">
+              <span>←</span> 前の大問へ
+            </button>
+            <button id="next-passage-btn" class="btn">
+              次の大問へ <span>→</span>
+            </button>
+          </div>
+          <button id="submit-test-btn" class="btn btn-danger">
+            📥 解答を終了する
+          </button>
+        </div>
+      </section>
+
+      <!-- SCREEN 3: Results Screen -->
+      <section id="results-screen" class="screen">
+        <div class="glass-card results-summary-card">
+          <!-- Score Circle Chart -->
+          <div class="score-radial-wrapper">
+            <svg class="score-radial-svg">
+              <circle class="circle-bg" cx="70" cy="70" r="60"></circle>
+              <circle id="score-circle-progress" class="circle-progress" cx="70" cy="70" r="60" style="stroke-dasharray: 377; stroke-dashoffset: 377;"></circle>
+            </svg>
+            <div class="score-radial-text">
+              <div id="score-pct-text" class="score-pct">0%</div>
+              <div id="score-fraction-text" class="score-fraction">0 / 0問正解</div>
+            </div>
+          </div>
+
+          <!-- Feedback text -->
+          <div class="feedback-section">
+            <h2 id="feedback-title" class="feedback-title">お疲れ様でした！</h2>
+            <p id="feedback-desc" class="feedback-text">テスト結果が算出されました。以下のカテゴリ別データや詳細解説を参照し、弱点克服に役立ててください。</p>
+            <div style="display: flex; gap: 10px; margin-top: 15px;">
+              <button id="retry-test-btn" class="btn btn-primary">同じ条件で再挑戦</button>
+              <button id="back-to-setup-btn" class="btn">設定画面に戻る</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Breakdown Stats Grid -->
+        <div class="stats-grid" id="stats-grid-container">
+          <!-- Javascript fills stats cards -->
+        </div>
+
+        <!-- Detailed Review Section -->
+        <div class="review-panel">
+          <div class="review-header">
+            <h3 class="review-title">🔍 問題ごとの詳細レビュー</h3>
+            <div class="filter-group">
+              <button class="filter-btn active" data-filter="all">すべて</button>
+              <button class="filter-btn" data-filter="correct">正解</button>
+              <button class="filter-btn" data-filter="incorrect">不正解</button>
+              <button class="filter-btn" data-filter="flagged">フラグ付き</button>
+            </div>
+          </div>
+
+          <div id="review-list-container" class="review-list">
+            <!-- Review cards will be inserted here via Javascript -->
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
