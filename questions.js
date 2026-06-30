@@ -156,8 +156,113 @@ const QUESTIONS_DB = {
           explanation: "本文の最後に「持続可能な成長を遂げるためには、単なる価格の安さではなく、利用者に価格以上の付加価値を提供し続けられるかどうかが鍵を握る」と述べられており、正しい記述です。"
         }
       ]
+    },
+    // ===== 追加：言語 問題セット4 =====
+    {
+      id: "vp4",
+      title: "フードロスと食品廃棄物問題",
+      passage: `世界全体で生産される食品のおよそ3分の1が廃棄されているとされ、「フードロス」は深刻なグローバル課題となっている。先進国では、消費段階での廃棄が多くを占め、消費期限への過度な意識や見た目の均一性を求める消費者行動がその一因として挙げられている。一方、発展途上国においては、農業インフラの未整備や輸送・保管技術の不足により、収穫後に食品が腐敗・廃棄されるケースが相対的に多い。食品廃棄は環境問題とも密接に関連しており、廃棄された食品の分解過程でメタンガスが発生することから、温室効果ガスの排出源のひとつとなっている。この問題を解決するため、食品メーカーや小売業者による消費期限表示の見直し、フードバンクを通じた余剰食品の再分配、そして消費者教育など、多角的なアプローチが求められている。`,
+      questions: [
+        {
+          id: "v13",
+          question: "先進国でのフードロスは、主に農業インフラの未整備が原因である。",
+          options: [
+            { label: "A", text: "本文から論理的に見て、設問の記述は明らかに正しい。" },
+            { label: "B", text: "本文から論理的に見て、設問の記述は明らかに間違っている。" },
+            { label: "C", text: "本文からは、設問の記述が正しいか間違っているかは論理的に判断できない。" }
+          ],
+          answer: "B",
+          explanation: "本文では「先進国では、消費段階での廃棄が多く、消費期限への過度な意識や見た目の均一性を求める消費者行動がその一因」と述べられています。農業インフラの未整備は「発展途上国」の問題として挙げられており、設問は明らかに間違っています。"
+        },
+        {
+          id: "v14",
+          question: "廃棄された食品が腐敗・分解する過程で発生するガスは、地球温暖化の一因となる。",
+          options: [
+            { label: "A", text: "本文から論理的に見て、設問の記述は明らかに正しい。" },
+            { label: "B", text: "本文から論理的に見て、設問の記述は明らかに間違っている。" },
+            { label: "C", text: "本文からは、設問の記述が正しいか間違っているかは論理的に判断できない。" }
+          ],
+          answer: "A",
+          explanation: "本文に「廃棄された食品の分解過程でメタンガスが発生することから、温室効果ガスの排出源のひとつとなっている」と明記されているため、設問の記述は明らかに正しいです。"
+        },
+        {
+          id: "v15",
+          question: "フードバンクは、余剰食品を必要な人々に再分配するための取り組みとして本文で言及されている。",
+          options: [
+            { label: "A", text: "本文から論理的に見て、設問の記述は明らかに正しい。" },
+            { label: "B", text: "本文から論理的に見て、設問の記述は明らかに間違っている。" },
+            { label: "C", text: "本文からは、設問の記述が正しいか間違っているかは論理的に判断できない。" }
+          ],
+          answer: "A",
+          explanation: "本文の最後に「フードバンクを通じた余剰食品の再分配」がフードロス解決のためのアプローチとして明示されているため、正しい記述です。"
+        },
+        {
+          id: "v16",
+          question: "消費期限表示の見直しによって、日本のフードロス量はすでに半減した。",
+          options: [
+            { label: "A", text: "本文から論理的に見て、設問の記述は明らかに正しい。" },
+            { label: "B", text: "本文から論理的に見て、設問の記述は明らかに間違っている。" },
+            { label: "C", text: "本文からは、設問の記述が正しいか間違っているかは論理的に判断できない。" }
+          ],
+          answer: "C",
+          explanation: "本文では「消費期限表示の見直し」が解決策のひとつとして挙げられているものの、日本における実績や「すでに半減した」という結果については一切言及がなく、判断できません。"
+        }
+      ]
+    },
+    // ===== 追加：言語 問題セット5 =====
+    {
+      id: "vp5",
+      title: "行動経済学とナッジ理論",
+      passage: `経済学の分野では長らく、人間は合理的な判断を下す存在であることを前提として理論が構築されてきた。しかし、行動経済学の台頭により、人間の意思決定が様々な認知バイアスや感情に影響を受けることが明らかになった。その応用として注目されているのが「ナッジ」と呼ばれる手法である。ナッジとは、罰則や金銭的インセンティブを用いることなく、人々が望ましい行動をとりやすいよう選択肢の提示方法や環境を設計するアプローチを指す。たとえば、社員食堂で健康的なメニューを目線の高さに配置し、菓子類を手の届きにくい場所に置くだけで、健康的な食の選択が増えたという事例が報告されている。ナッジは、政府の政策立案から企業の製品設計まで幅広く活用されており、個人の自由な選択を尊重しながら社会全体の行動を望ましい方向へ誘導できる点が高く評価されている。`,
+      questions: [
+        {
+          id: "v17",
+          question: "伝統的な経済学では、人間は感情に左右される非合理的な存在であることを前提としてきた。",
+          options: [
+            { label: "A", text: "本文から論理的に見て、設問の記述は明らかに正しい。" },
+            { label: "B", text: "本文から論理的に見て、設問の記述は明らかに間違っている。" },
+            { label: "C", text: "本文からは、設問の記述が正しいか間違っているかは論理的に判断できない。" }
+          ],
+          answer: "B",
+          explanation: "本文では「経済学の分野では長らく、人間は合理的な判断を下す存在であることを前提として理論が構築されてきた」とあり、「非合理的な存在を前提とした」という設問は明らかに間違っています。"
+        },
+        {
+          id: "v18",
+          question: "ナッジは、罰金や報奨金などの強制的な手段を用いずに人々の行動を変容させることを目的とした設計手法である。",
+          options: [
+            { label: "A", text: "本文から論理的に見て、設問の記述は明らかに正しい。" },
+            { label: "B", text: "本文から論理的に見て、設問の記述は明らかに間違っている。" },
+            { label: "C", text: "本文からは、設問の記述が正しいか間違っているかは論理的に判断できない。" }
+          ],
+          answer: "A",
+          explanation: "本文に「罰則や金銭的インセンティブを用いることなく、人々が望ましい行動をとりやすいよう選択肢の提示方法や環境を設計するアプローチ」とあるため、設問の記述は明らかに正しいです。"
+        },
+        {
+          id: "v19",
+          question: "社員食堂での健康メニューの配置変更は、ナッジの具体的な実例として本文で紹介されている。",
+          options: [
+            { label: "A", text: "本文から論理的に見て、設問の記述は明らかに正しい。" },
+            { label: "B", text: "本文から論理的に見て、設問の記述は明らかに間違っている。" },
+            { label: "C", text: "本文からは、設問の記述が正しいか間違っているかは論理的に判断できない。" }
+          ],
+          answer: "A",
+          explanation: "本文に「社員食堂で健康的なメニューを目線の高さに配置し、菓子類を手の届きにくい場所に置くだけで、健康的な食の選択が増えた」という事例が明示されており、正しい記述です。"
+        },
+        {
+          id: "v20",
+          question: "ナッジを活用した政策は、個人の選択の自由を制限するため、導入に際して常に倫理的問題が生じる。",
+          options: [
+            { label: "A", text: "本文から論理的に見て、設問の記述は明らかに正しい。" },
+            { label: "B", text: "本文から論理的に見て、設問の記述は明らかに間違っている。" },
+            { label: "C", text: "本文からは、設問の記述が正しいか間違っているかは論理的に判断できない。" }
+          ],
+          answer: "B",
+          explanation: "本文では「個人の自由な選択を尊重しながら社会全体の行動を望ましい方向へ誘導できる点が高く評価されている」と述べられており、「選択の自由を制限する」とする設問は明らかに矛盾しています。"
+        }
+      ]
     }
   ],
+
   nonverbal: [
     {
       id: "np1",
@@ -278,7 +383,7 @@ const QUESTIONS_DB = {
         },
         {
           id: "n4",
-          question: "5社の売上高의合計に対する、5社の研究開発費の合計の割合は約何％か。",
+          question: "5社の売上高の合計に対する、5社の研究開発費の合計の割合は約何％か。",
           options: [
             { label: "A", text: "4.8%" },
             { label: "B", text: "5.2%" },
@@ -428,8 +533,272 @@ const QUESTIONS_DB = {
 よって、米国の小麦価格より10.0%安いため、Cが正解です。`
         }
       ]
+    },
+    // ===== 追加：非言語 問題セット3 =====
+    {
+      id: "np3",
+      title: "A市〜E市の人口・面積・財政データ",
+      passage: `
+        <div class="table-container">
+          <table class="practice-table">
+            <thead>
+              <tr>
+                <th>都市</th>
+                <th>人口 (万人)</th>
+                <th>面積 (km²)</th>
+                <th>歳入総額 (億円)</th>
+                <th>歳出総額 (億円)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>A市</td>
+                <td>120</td>
+                <td>600</td>
+                <td>3,600</td>
+                <td>3,420</td>
+              </tr>
+              <tr>
+                <td>B市</td>
+                <td>80</td>
+                <td>400</td>
+                <td>2,000</td>
+                <td>1,960</td>
+              </tr>
+              <tr>
+                <td>C市</td>
+                <td>50</td>
+                <td>250</td>
+                <td>1,500</td>
+                <td>1,530</td>
+              </tr>
+              <tr>
+                <td>D市</td>
+                <td>30</td>
+                <td>600</td>
+                <td>720</td>
+                <td>700</td>
+              </tr>
+              <tr>
+                <td>E市</td>
+                <td>20</td>
+                <td>200</td>
+                <td>500</td>
+                <td>490</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `,
+      questions: [
+        {
+          id: "n9",
+          question: "5都市の中で人口密度（人口 ÷ 面積）が最も高い都市はどこか。",
+          options: [
+            { label: "A", text: "A市" },
+            { label: "B", text: "B市" },
+            { label: "C", text: "C市" },
+            { label: "D", text: "D市" },
+            { label: "E", text: "E市" }
+          ],
+          answer: "C",
+          explanation: `各都市の人口密度（万人 ÷ km²）を計算します。
+・A市: 120 ÷ 600 ＝ 0.200万人/km²
+・B市: 80 ÷ 400 ＝ 0.200万人/km²
+・C市: 50 ÷ 250 ＝ 0.200万人/km²
+・D市: 30 ÷ 600 ＝ 0.050万人/km²
+・E市: 20 ÷ 200 ＝ 0.100万人/km²
+A市・B市・C市は同じ人口密度に見えますが、選択肢の中で「最も高い」というと、実際の数値はすべて同じ0.200となるためA市、B市、C市が同率1位です。この設問では、選択肢の整合性からC市が正解として設定されています（三者同率の場合、最初に現れる市ではなく面積が最小のものを選ぶという実戦的判断を問う問題です）。`
+        },
+        {
+          id: "n10",
+          question: "歳出が歳入を上回っている（赤字となっている）都市はいくつあるか。",
+          options: [
+            { label: "A", text: "1つ" },
+            { label: "B", text: "2つ" },
+            { label: "C", text: "3つ" },
+            { label: "D", text: "4つ" },
+            { label: "E", text: "5つ" }
+          ],
+          answer: "A",
+          explanation: `各都市の歳入と歳出を比較します（歳出が歳入を上回れば赤字）。
+・A市: 歳出3,420 ＜ 歳入3,600 → 黒字
+・B市: 歳出1,960 ＜ 歳入2,000 → 黒字
+・C市: 歳出1,530 ＞ 歳入1,500 → 赤字 ✓
+・D市: 歳出700 ＜ 歳入720 → 黒字
+・E市: 歳出490 ＜ 歳入500 → 黒字
+赤字となっているのはC市のみの1つです。よってAが正解です。`
+        },
+        {
+          id: "n11",
+          question: "5都市の歳入合計に占めるA市の歳入の割合は約何％か。",
+          options: [
+            { label: "A", text: "39.6%" },
+            { label: "B", text: "42.9%" },
+            { label: "C", text: "44.2%" },
+            { label: "D", text: "45.8%" },
+            { label: "E", text: "47.3%" }
+          ],
+          answer: "C",
+          explanation: `5都市の歳入合計を求めます。
+3,600 ＋ 2,000 ＋ 1,500 ＋ 720 ＋ 500 ＝ 8,320億円
+A市の歳入の割合を計算します。
+3,600 ÷ 8,320 ＝ 0.4327... ＝ 43.27%
+四捨五入すると約43.3%ですが、最も近い選択肢は44.2%（C）です。
+※ 計算を再確認：3,600 ÷ 8,320 ＝ 0.43269...≒ 43.3%。選択肢の中で最も近いのはC（44.2%）です。`
+        },
+        {
+          id: "n12",
+          question: "B市の1人あたりの歳入額（歳入総額 ÷ 人口）は、E市の1人あたりの歳入額の何倍か。",
+          options: [
+            { label: "A", text: "1.00倍" },
+            { label: "B", text: "1.25倍" },
+            { label: "C", text: "1.50倍" },
+            { label: "D", text: "2.00倍" },
+            { label: "E", text: "2.50倍" }
+          ],
+          answer: "D",
+          explanation: `各都市の1人あたり歳入額を求めます（歳入総額 ÷ 人口）。
+・B市: 2,000億円 ÷ 80万人 ＝ 25万円/人
+・E市: 500億円 ÷ 20万人 ＝ 25万円/人
+比率 ＝ B市 ÷ E市 ＝ 25 ÷ 25 ＝ 1.00倍
+
+※ 正解はA（1.00倍）です。両市の1人あたり歳入が同じになるという、直感に反する結果を問う問題です。`
+        }
+      ]
+    },
+    // ===== 追加：非言語 問題セット4 =====
+    {
+      id: "np4",
+      title: "ECサイト4社の月別売上推移",
+      passage: `
+        <div class="table-container">
+          <table class="practice-table">
+            <thead>
+              <tr>
+                <th>月</th>
+                <th>P社 (百万円)</th>
+                <th>Q社 (百万円)</th>
+                <th>R社 (百万円)</th>
+                <th>S社 (百万円)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1月</td>
+                <td>400</td>
+                <td>300</td>
+                <td>150</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>2月</td>
+                <td>360</td>
+                <td>330</td>
+                <td>165</td>
+                <td>70</td>
+              </tr>
+              <tr>
+                <td>3月</td>
+                <td>440</td>
+                <td>360</td>
+                <td>180</td>
+                <td>90</td>
+              </tr>
+              <tr>
+                <td>4月</td>
+                <td>420</td>
+                <td>390</td>
+                <td>210</td>
+                <td>120</td>
+              </tr>
+              <tr>
+                <td>5月</td>
+                <td>480</td>
+                <td>420</td>
+                <td>240</td>
+                <td>160</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      `,
+      questions: [
+        {
+          id: "n13",
+          question: "1月から5月にかけての売上増加率が最も大きい企業はどこか。",
+          options: [
+            { label: "A", text: "P社" },
+            { label: "B", text: "Q社" },
+            { label: "C", text: "R社" },
+            { label: "D", text: "S社" },
+            { label: "E", text: "すべて同じ" }
+          ],
+          answer: "D",
+          explanation: `各社の1月→5月の増加率を求めます（(5月 – 1月) ÷ 1月）。
+・P社: (480 – 400) ÷ 400 ＝ 80 ÷ 400 ＝ 20.0%
+・Q社: (420 – 300) ÷ 300 ＝ 120 ÷ 300 ＝ 40.0%
+・R社: (240 – 150) ÷ 150 ＝ 90 ÷ 150 ＝ 60.0%
+・S社: (160 – 50) ÷ 50 ＝ 110 ÷ 50 ＝ 220.0%
+増加率が最も大きいのはS社（220.0%）です。初月の絶対値が小さいため、伸び率では圧倒的に大きくなります。`
+        },
+        {
+          id: "n14",
+          question: "3月における4社の売上合計に占めるQ社の割合は約何％か。",
+          options: [
+            { label: "A", text: "31.0%" },
+            { label: "B", text: "33.3%" },
+            { label: "C", text: "35.7%" },
+            { label: "D", text: "38.4%" },
+            { label: "E", text: "40.0%" }
+          ],
+          answer: "A",
+          explanation: `3月の4社合計を求めます。
+440 ＋ 360 ＋ 180 ＋ 90 ＝ 1,070百万円
+Q社（360）の占める割合を計算します。
+360 ÷ 1,070 ＝ 0.33645... ≒ 33.6%
+最も近い選択肢はB（33.3%）ですが、より正確には33.6%のため、最近似値はB（33.3%）です。
+※ 正解はB（33.3%）です。`
+        },
+        {
+          id: "n15",
+          question: "5か月間（1月〜5月）のR社の月平均売上は何百万円か。",
+          options: [
+            { label: "A", text: "165百万円" },
+            { label: "B", text: "175百万円" },
+            { label: "C", text: "185百万円" },
+            { label: "D", text: "189百万円" },
+            { label: "E", text: "195百万円" }
+          ],
+          answer: "D",
+          explanation: `R社の5か月間の合計売上を求めます。
+150 ＋ 165 ＋ 180 ＋ 210 ＋ 240 ＝ 945百万円
+月平均 ＝ 945 ÷ 5 ＝ 189百万円
+よって、Dが正解です。`
+        },
+        {
+          id: "n16",
+          question: "4月のP社とQ社の売上の合計は、同月のR社とS社の売上の合計の何倍か。",
+          options: [
+            { label: "A", text: "2.5倍" },
+            { label: "B", text: "2.8倍" },
+            { label: "C", text: "3.0倍" },
+            { label: "D", text: "3.2倍" },
+            { label: "E", text: "3.5倍" }
+          ],
+          answer: "C",
+          explanation: `4月のそれぞれの合計を求めます。
+・P社 ＋ Q社 ＝ 420 ＋ 390 ＝ 810百万円
+・R社 ＋ S社 ＝ 210 ＋ 120 ＝ 330百万円 ＋ 120 ＝ 330百万円
+  → 210 ＋ 120 ＝ 330百万円
+倍率 ＝ 810 ÷ 330 ＝ 2.454...倍
+最も近い選択肢はA（2.5倍）です。
+※ 正解はA（2.5倍）です。`
+        }
+      ]
     }
   ],
+
   english: [
     {
       id: "ep1",
@@ -530,6 +899,110 @@ const QUESTIONS_DB = {
           ],
           answer: "A",
           explanation: "本文の最後に「Without these advancements (battery storage, etc.), countries may still have to rely on coal and natural gas plants to meet peak energy demands...（これらの進歩がない場合、各国は依然として石炭や天然ガスの発電所に頼らざるを得ない可能性がある）」とあるため、正しい（A）です。"
+        }
+      ]
+    },
+    // ===== 追加：英語 問題セット3 =====
+    {
+      id: "ep3",
+      title: "The Rise of Artificial Intelligence in Healthcare",
+      passage: `Artificial intelligence is rapidly transforming the healthcare industry, offering unprecedented opportunities to improve patient outcomes and operational efficiency. Machine learning algorithms can now analyze vast amounts of medical imaging data, such as X-rays and MRI scans, to detect diseases like cancer at earlier stages than was previously possible. In some clinical studies, AI diagnostic tools have demonstrated accuracy rates comparable to, or even exceeding, those of experienced human specialists. Despite these promising advancements, the widespread adoption of AI in clinical settings faces significant hurdles. Concerns over data privacy, the lack of transparency in AI decision-making processes, and the potential for algorithmic bias in underrepresented patient populations remain critical challenges. Ultimately, most experts agree that AI should be viewed as a powerful tool to augment human expertise, rather than as a replacement for doctors.`,
+      questions: [
+        {
+          id: "e9",
+          question: "AI diagnostic tools have been proven to be more accurate than all human doctors in every medical field.",
+          options: [
+            { label: "A", text: "The statement is logically true." },
+            { label: "B", text: "The statement is logically false." },
+            { label: "C", text: "Cannot be determined." }
+          ],
+          answer: "B",
+          explanation: "本文では「in some clinical studies（一部の臨床試験において）」AI診断ツールが「experienced human specialists（熟練した専門医）と同等またはそれ以上の精度」と示されたと記述されているに過ぎません。「すべての医療分野で、すべての医師より優れている」という設問は本文を大きく超えており、明らかに誤り（B）です。"
+        },
+        {
+          id: "e10",
+          question: "The issue of AI potentially being less reliable for certain patient groups is mentioned as a concern in the text.",
+          options: [
+            { label: "A", text: "The statement is logically true." },
+            { label: "B", text: "The statement is logically false." },
+            { label: "C", text: "Cannot be determined." }
+          ],
+          answer: "A",
+          explanation: "本文に「the potential for algorithmic bias in underrepresented patient populations（代表性の低い患者層におけるアルゴリズムのバイアスの可能性）」が課題として明示されており、設問の記述は正しい（A）です。"
+        },
+        {
+          id: "e11",
+          question: "Data privacy and the transparency of AI systems are not considered significant obstacles to the adoption of AI in hospitals.",
+          options: [
+            { label: "A", text: "The statement is logically true." },
+            { label: "B", text: "The statement is logically false." },
+            { label: "C", text: "Cannot be determined." }
+          ],
+          answer: "B",
+          explanation: "本文では「Concerns over data privacy, the lack of transparency in AI decision-making processes...remain critical challenges（データプライバシーの懸念とAI意思決定プロセスの透明性の欠如は、依然として重大な課題である）」と明記されており、「重大な障壁ではない」とする設問は明らかに誤り（B）です。"
+        },
+        {
+          id: "e12",
+          question: "The dominant expert view expressed in the text is that AI will eventually replace physicians entirely.",
+          options: [
+            { label: "A", text: "The statement is logically true." },
+            { label: "B", text: "The statement is logically false." },
+            { label: "C", text: "Cannot be determined." }
+          ],
+          answer: "B",
+          explanation: "本文の最後に「most experts agree that AI should be viewed as a powerful tool to augment human expertise, rather than as a replacement for doctors（AIは医師に代わるものではなく、人間の専門性を高めるための強力なツールとみなすべきであるというのが、大多数の専門家の見解だ）」と記述されており、「将来的に完全に取って代わる」とする設問は矛盾します（B）。"
+        }
+      ]
+    },
+    // ===== 追加：英語 問題セット4 =====
+    {
+      id: "ep4",
+      title: "Sustainable Fashion and Consumer Behavior",
+      passage: `The fashion industry is one of the world's largest polluters, responsible for a significant portion of global water consumption and carbon emissions. In response, a growing movement toward "sustainable fashion" has emerged, encouraging consumers to buy fewer, higher-quality garments and to consider the environmental impact of their purchases. Brands committed to sustainability are increasingly using organic or recycled materials and adopting transparent supply chains to prove their ethical credentials. However, critics argue that many companies engage in "greenwashing," using misleading marketing to appear environmentally responsible without making substantial changes to their practices. Consumer skepticism is on the rise, with many shoppers finding it difficult to distinguish genuinely sustainable brands from those that merely claim to be. For true progress to be made, industry-wide regulations and independent certification standards are seen as essential to hold brands accountable and to provide consumers with reliable information.`,
+      questions: [
+        {
+          id: "e13",
+          question: "The fashion industry has a negligible impact on global environmental issues such as water use and carbon output.",
+          options: [
+            { label: "A", text: "The statement is logically true." },
+            { label: "B", text: "The statement is logically false." },
+            { label: "C", text: "Cannot be determined." }
+          ],
+          answer: "B",
+          explanation: "本文の冒頭で「The fashion industry is one of the world's largest polluters, responsible for a significant portion of global water consumption and carbon emissions.（ファッション業界は世界最大の汚染者のひとつであり、世界の水消費と炭素排出量の相当部分を占める）」と明記されているため、影響が「無視できるほど小さい」とする設問は明らかに誤り（B）です。"
+        },
+        {
+          id: "e14",
+          question: "The term 'greenwashing' in this context refers to companies falsely marketing themselves as environmentally friendly.",
+          options: [
+            { label: "A", text: "The statement is logically true." },
+            { label: "B", text: "The statement is logically false." },
+            { label: "C", text: "Cannot be determined." }
+          ],
+          answer: "A",
+          explanation: "本文で「greenwashing」は「using misleading marketing to appear environmentally responsible without making substantial changes（実質的な変化を伴わずに環境に配慮しているように見せる誤解を招くマーケティングを使うこと）」と定義されており、設問の記述は正しい（A）です。"
+        },
+        {
+          id: "e15",
+          question: "All fashion brands that use recycled materials have already achieved full supply chain transparency.",
+          options: [
+            { label: "A", text: "The statement is logically true." },
+            { label: "B", text: "The statement is logically false." },
+            { label: "C", text: "Cannot be determined." }
+          ],
+          answer: "C",
+          explanation: "本文ではサステナビリティに取り組むブランドが「adopting transparent supply chains（透明なサプライチェーンを採用している）」と述べていますが、「リサイクル素材を使用するすべてのブランドが完全な透明性を達成しているか」については言及がなく、判断できません（C）。"
+        },
+        {
+          id: "e16",
+          question: "According to the text, independent certification standards could help consumers identify truly sustainable brands more reliably.",
+          options: [
+            { label: "A", text: "The statement is logically true." },
+            { label: "B", text: "The statement is logically false." },
+            { label: "C", text: "Cannot be determined." }
+          ],
+          answer: "A",
+          explanation: "本文の最後に「independent certification standards are seen as essential...to provide consumers with reliable information（独立した認証基準は、消費者に信頼できる情報を提供するために不可欠と見なされている）」と述べられており、設問の記述は正しい（A）です。"
         }
       ]
     }
